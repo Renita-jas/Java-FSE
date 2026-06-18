@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/AdapterPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/BuilderPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/CommandPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/DecoratorPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/DependencyInjectionExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/FactoryMethodPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/MVCPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/ObserverPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/ProxyPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/SingletonPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-1/StrategyPatternExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-2/E-commercePlatform" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-2/EmployeeManagementSystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-2/FInancialForecasting" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-2/InventoryManagementSystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-2/LibraryManagementSystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-2/LinkedListImplementationExample" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module-2/SortingImplementationExample" vcs="Git" />
+  </component>
+</project>
