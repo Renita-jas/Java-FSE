@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="country" class="com.cognizant.spring_learn.model.Country">
+        <property name="id" value="1"/>
+        <property name="code" value="IN"/>
+        <property name="name" value="India"/>
+        <property name="capital" value="New Delhi"/>
+    </bean>
+
+
+    <bean id="us" class="com.cognizant.spring_learn.model.Country">
+        <property name="id" value="2"/>
+        <property name="code" value="US"/>
+        <property name="name" value="United States"/>
+        <property name="capital" value="Washington D.C."/>
+    </bean>
+
+    <bean id="germany" class="com.cognizant.spring_learn.model.Country">
+        <property name="id" value="3"/>
+        <property name="code" value="DE"/>
+        <property name="name" value="Germany"/>
+        <property name="capital" value="Berlin"/>
+    </bean>
+
+    <bean id="japan" class="com.cognizant.spring_learn.model.Country">
+        <property name="id" value="4"/>
+        <property name="code" value="JP"/>
+        <property name="name" value="Japan"/>
+        <property name="capital" value="Tokyo"/>
+    </bean>
+
+
+</beans>
