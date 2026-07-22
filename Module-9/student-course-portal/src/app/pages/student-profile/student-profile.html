@@ -1,1 +1,21 @@
-<p>student-profile works!</p>
+<section class="profile-card">
+  <div class="avatar">AT</div>
+
+  <div class="profile-details">
+    <h2>{{ student.name }}</h2>
+    <p class="role">{{ student.major }} • {{ student.semester }}</p>
+    <p>{{ student.bio }}</p>
+
+    <div class="meta">
+      <span>Email: {{ student.email }}</span>
+      <span>Joined: {{ student.joinDate }}</span>
+    </div>
+  </div>
+</section>
+
+<section class="highlights">
+  <h3>Highlights</h3>
+  <ul>
+    <li *ngFor="let item of highlights">{{ item }}</li>
+  </ul>
+</section>

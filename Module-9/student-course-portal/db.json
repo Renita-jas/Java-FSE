@@ -1,0 +1,39 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Angular",
+      "code": "ANG101",
+      "credits": 4,
+      "price": 15000,
+      "duration": 3,
+      "startDate": "2026-01-10",
+      "gradeStatus": "passed",
+      "level": "Beginner"
+    },
+    {
+      "id": 2,
+      "name": "Java",
+      "code": "JAVA201",
+      "credits": 5,
+      "price": 12000,
+      "duration": 4,
+      "startDate": "2026-02-15",
+      "gradeStatus": "pending",
+      "level": "Intermediate"
+    },
+    {
+      "id": 3,
+      "name": "Python",
+      "code": "PY301",
+      "credits": 4,
+      "price": 10000,
+      "duration": 2,
+      "startDate": "2026-03-01",
+      "gradeStatus": "failed",
+      "level": "Advanced"
+    }
+  ],
+  "students": [],
+  "enrollments": []
+}

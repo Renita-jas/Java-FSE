@@ -1,37 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CourseCard } from '../../components/course-card/course-card';
+import { RouterModule } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { CourseCardComponent } from '../../components/course-card/course-card';
+import { Course } from '../../models/course.model';
+import { loadCourses } from '../../store/course/course.actions';
+import { selectAllCourses, selectCoursesLoading, selectCoursesError } from '../../store/course/course.selectors';
+import { enrollInCourse, unenrollFromCourse } from '../../store/enrollment/enrollment.actions';
+import { selectEnrolledIds } from '../../store/enrollment/enrollment.selectors';
 
 @Component({
   selector: 'app-course-list',
-  imports: [CommonModule, CourseCard],
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterModule,
+    CourseCardComponent
+  ],
   templateUrl: './course-list.html',
   styleUrl: './course-list.css'
 })
-export class CourseList {
+export class CourseListComponent implements OnInit {
 
-  selectedCourseId:number=0;
+  private store = inject(Store) as Store<any>;
 
-  courses=[
+  courses$!: Observable<Course[]>;
+  loading$!: Observable<boolean>;
+  error$!: Observable<string | null>;
+  enrolledIds$!: Observable<number[]>;
 
-    {id:1,name:'Java',code:'CS101',credits:4},
+  ngOnInit(): void {
+    this.courses$ = this.store.select(selectAllCourses);
+    this.loading$ = this.store.select(selectCoursesLoading);
+    this.error$ = this.store.select(selectCoursesError);
+    this.enrolledIds$ = this.store.select(selectEnrolledIds);
 
-    {id:2,name:'Angular',code:'CS102',credits:3},
+    this.store.dispatch(loadCourses());
+  }
 
-    {id:3,name:'Spring Boot',code:'CS103',credits:4},
+  enroll(id: number) {
+    this.store.dispatch(enrollInCourse({ courseId: id }));
+  }
 
-    {id:4,name:'Python',code:'CS104',credits:3},
-
-    {id:5,name:'Database',code:'CS105',credits:4}
-
-  ];
-
-  onEnroll(courseId:number){
-
-      console.log("Enrolling in course:",courseId);
-
-      this.selectedCourseId=courseId;
-
+  unenroll(id: number) {
+    this.store.dispatch(unenrollFromCourse({ courseId: id }));
   }
 
 }

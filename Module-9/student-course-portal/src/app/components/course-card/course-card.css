@@ -1,15 +1,53 @@
 .card{
-
-    width:250px;
     border:1px solid #ddd;
     border-radius:10px;
-    padding:15px;
-    margin:10px;
-    box-shadow:0 2px 6px lightgray;
+    padding:16px;
+    margin:15px;
+    width:280px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    background:white;
+}
+
+.card h2{
+    color:#1976d2;
+    margin-bottom:10px;
+}
+
+.card p{
+    margin:6px 0;
 }
 
 button{
-
     margin-top:10px;
-    padding:8px 15px;
+    padding:8px 16px;
+    border:none;
+    border-radius:5px;
+    background:#1976d2;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#125aa0;
+}
+
+.passed{
+    color:green;
+    font-weight:bold;
+}
+
+.failed{
+    color:red;
+    font-weight:bold;
+}
+.beginner {
+  border-left: 6px solid #4CAF50;
+}
+
+.intermediate {
+  border-left: 6px solid #FF9800;
+}
+
+.advanced {
+  border-left: 6px solid #F44336;
 }

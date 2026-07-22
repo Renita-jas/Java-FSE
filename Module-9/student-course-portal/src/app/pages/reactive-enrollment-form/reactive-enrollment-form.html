@@ -1,0 +1,147 @@
+<div class="container">
+
+  <h1>Reactive Enrollment Form</h1>
+
+  <form [formGroup]="enrollForm" (ngSubmit)="onSubmit()">
+
+    <label>Student Name</label>
+
+    <input type="text" formControlName="studentName">
+
+    <div class="error"
+      *ngIf="enrollForm.get('studentName')?.hasError('required') &&
+             enrollForm.get('studentName')?.touched">
+      Student Name is required
+    </div>
+
+    <div class="error"
+      *ngIf="enrollForm.get('studentName')?.hasError('minlength') &&
+             enrollForm.get('studentName')?.touched">
+      Minimum 3 characters required
+    </div>
+
+    <label>Email</label>
+
+    <input type="email" formControlName="studentEmail">
+
+    <div class="error"
+      *ngIf="enrollForm.get('studentEmail')?.hasError('required') &&
+             enrollForm.get('studentEmail')?.touched">
+      Email is required
+    </div>
+
+    <div class="error"
+      *ngIf="enrollForm.get('studentEmail')?.hasError('email') &&
+             enrollForm.get('studentEmail')?.touched">
+      Enter a valid email
+    </div>
+
+    <div class="error"
+      *ngIf="enrollForm.get('studentEmail')?.pending">
+      Checking Email...
+    </div>
+
+    <div class="error"
+      *ngIf="enrollForm.get('studentEmail')?.hasError('emailTaken')">
+      Email already exists
+    </div>
+
+    <label>Course</label>
+
+<select formControlName="courseId">
+  <option value="">Select Course</option>
+  <option value="CS101">CS101</option>
+  <option value="CS102">CS102</option>
+  <option value="CS103">CS103</option>
+</select>
+
+    <div class="error"
+      *ngIf="enrollForm.get('courseId')?.hasError('required') &&
+             enrollForm.get('courseId')?.touched">
+      Course Code is required
+    </div>
+
+    <div class="error"
+      *ngIf="enrollForm.get('courseId')?.hasError('noCourseCode')">
+      Course codes beginning with XX are not allowed.
+    </div>
+
+    <label>Semester</label>
+
+    <select formControlName="preferredSemester">
+      <option>Odd</option>
+      <option>Even</option>
+    </select>
+
+    <br>
+
+    <label>
+      <input type="checkbox" formControlName="agreeToTerms">
+      Agree Terms
+    </label>
+
+    <div class="error"
+      *ngIf="enrollForm.get('agreeToTerms')?.invalid &&
+             enrollForm.get('agreeToTerms')?.touched">
+      Please accept the terms.
+    </div>
+
+    <br><br>
+
+    <h3>Additional Courses</h3>
+
+    <button
+      type="button"
+      (click)="addCourse()">
+      Add Another Course
+    </button>
+
+    <br><br>
+
+    <div formArrayName="additionalCourses">
+
+      <div *ngFor="let c of additionalCourses.controls; let i = index">
+
+        <input [formControlName]="i" placeholder="Additional Course">
+
+        <button
+          type="button"
+          (click)="removeCourse(i)">
+          Remove
+        </button>
+
+      </div>
+
+    </div>
+
+    <br>
+
+    <button
+      type="submit"
+      [disabled]="enrollForm.invalid">
+      Submit
+    </button>
+
+    <button
+      type="button"
+      (click)="enrollForm.reset({
+        preferredSemester:'Odd',
+        agreeToTerms:false
+      })">
+      Reset
+    </button>
+
+  </form>
+
+  <hr>
+
+  <h3>Form Preview</h3>
+
+  <pre>{{ enrollForm.value | json }}</pre>
+
+  <p>
+    <b>Form Status:</b>
+    {{ enrollForm.status }}
+  </p>
+
+</div>

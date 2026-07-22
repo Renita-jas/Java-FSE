@@ -1,0 +1,17 @@
+<div *ngIf="course" class="container">
+
+    <h1>{{course.name}}</h1>
+
+    <p><b>Course ID:</b> {{course.id}}</p>
+
+    <p><b>Course Code:</b> {{course.code}}</p>
+
+    <p><b>Credits:</b> {{course.credits}}</p>
+
+    <p><b>Duration:</b> {{course.duration}} Months</p>
+
+    <p><b>Fee:</b> {{course.price | currency:'INR'}}</p>
+
+    <p><b>Status:</b> {{course.gradeStatus}}</p>
+
+</div>
